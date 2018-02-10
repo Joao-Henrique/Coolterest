@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from '../IMG/logo.svg';
 import '../CSS/App.css';
+import Header from './Header';
 
 class App extends Component {
   state = {
@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   callApi = async () => {
-    const response = await fetch('/api/mensagem');
+    const response = await fetch('/api/message');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
 
@@ -24,10 +24,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+        <Header />
+        <h1 className="App-title">Welcome to React</h1>
         <p className="App-intro">{this.state.response}</p>
       </div>
     );
