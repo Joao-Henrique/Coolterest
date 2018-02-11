@@ -21,9 +21,9 @@ const Header = () => (
       </Nav>
       <Nav pullRight>
         <NavItem eventKey={2} href="/AddCool">
-          <a className="button right" title="Add Cool">
+          <div title="Add Cool">
             <i className="fa fa-plus"></i>
-          </a>
+          </div>
         </NavItem>
         <NavItem eventKey={1} href="#">
           Sign In

@@ -1,0 +1,28 @@
+.thumbnail {
+  border-radius: 8px;
+  width: 200px;
+}
+h3 {
+  margin-top: 0;
+}
+.buttons {
+  margin-bottom: 0;
+  text-align: left;
+}
+.button {
+  margin-left:14px;
+  margin-right:14px;
+}
+.thumbnail .caption {
+  padding: 0;
+}
+.left {
+  color:black;
+}
+.right {
+  float: right;
+  color:black;
+}
+.imageCard {
+  width:200px;
+}

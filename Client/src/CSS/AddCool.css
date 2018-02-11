@@ -1,0 +1,34 @@
+.addCool {
+  text-align: center;
+  color: white;
+  margin-top: 0;
+}
+.formBox {
+  width: 600px;
+  margin: auto;
+  border-color: white;
+  border-style: solid;
+  padding: 40px;
+}
+.controlLable {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+}
+.addCoolButtonDiv {
+  text-align: right;
+  margin-top: 40px;
+}
+.addCoolButton {
+  border-style: solid;
+  border-color: white;
+  color: white;
+  background-color: lightcoral;
+}
+.addCoolButton:hover {
+  border-style: solid;
+  border-color: lightcoral;
+  color: lightcoral;
+  transition: 300ms;
+  background-color: white;
+}

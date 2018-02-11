@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../CSS/App.css';
 import Header from './Header';
+import Gallery from './Gallery';
+
 
 class App extends Component {
   state = {
@@ -25,8 +27,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <h1 className="App-title">Welcome to React</h1>
         <p className="App-intro">{this.state.response}</p>
+        <Gallery />
       </div>
     );
   }
