@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { FormGroup, ControlLabel, FormControl, HelpBlock, Button } from 'react-bootstrap';
+import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import '../CSS/AddCool.css';
 
-class AddCool extends React.Component {
+class AddCool extends Component {
 
   constructor(props, context) {
     super(props, context);

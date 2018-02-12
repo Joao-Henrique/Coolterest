@@ -8,18 +8,18 @@ const ImageCard = () => (
       src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Reeipublic_Banana.gif"
       alt="pic">
       <h3>Some Title</h3>
-      <div className="info">
+      <div>
         <p>User Name</p>
-        <p>Post Date</p>
       </div>
-      <p className="buttons">
-        <a className="button left" title="Like">
+      <div className="info">
+        <a className="left" title="Like">
           <i className="fa fa-thumbs-up"></i>
         </a>
-        <a className="button right" title="Delete">
+        <p className="date">Post Date</p>
+        <a className="right" title="Delete">
           <i className="fa fa-trash"></i>
         </a>
-      </p>
+      </div>
     </Thumbnail>
   </div>
 );

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../CSS/App.css';
 import Header from './Header';
 import Gallery from './Gallery';
+import AddCool from './AddCool';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 class App extends Component {
@@ -28,7 +30,14 @@ class App extends Component {
       <div className="App">
         <Header />
         <p className="App-intro">{this.state.response}</p>
-        <Gallery />
+        <Router>
+          <div>
+            <Link to="/">Gallery</Link>
+            <Link to="/AddCool">AddCool</Link>
+            <Route exact path="/" component={Gallery} />
+            <Route path="/AddCool" component={AddCool} />
+          </div>
+        </Router>
       </div>
     );
   }

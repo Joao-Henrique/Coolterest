@@ -2,27 +2,27 @@
   border-radius: 8px;
   width: 200px;
 }
-h3 {
-  margin-top: 0;
-}
-.buttons {
-  margin-bottom: 0;
-  text-align: left;
-}
-.button {
-  margin-left:14px;
-  margin-right:14px;
+h3, p {
+  margin: 0;
 }
 .thumbnail .caption {
   padding: 0;
 }
 .left {
   color:black;
+  margin-left:12px;
 }
 .right {
-  float: right;
   color:black;
+  margin-left:40px;
+}
+.date {
+  margin-left: 40px;
 }
 .imageCard {
   width:200px;
+}
+.info {
+  display: flex;
+  width: 100%;
 }
