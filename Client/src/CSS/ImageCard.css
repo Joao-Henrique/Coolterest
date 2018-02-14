@@ -1,6 +1,7 @@
 .thumbnail {
   border-radius: 8px;
   width: 200px;
+  background-color: var(--secondary-color);
 }
 h3, p {
   margin: 0;
@@ -8,21 +9,30 @@ h3, p {
 .thumbnail .caption {
   padding: 0;
 }
+.imageCardTitle {
+  color: var(--text-color);
+}
+.imageCardUser {
+  color: var(--text-color);
+}
 .left {
-  color:black;
+  color: var(--text-color);
   margin-left:12px;
 }
 .right {
-  color:black;
+  color: var(--text-color);
   margin-left:40px;
 }
 .date {
   margin-left: 40px;
+  color: var(--text-color);
 }
 .imageCard {
   width:200px;
+  color: var(--text-color);
 }
 .info {
   display: flex;
   width: 100%;
+  color: var(--text-color);
 }

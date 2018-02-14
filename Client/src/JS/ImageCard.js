@@ -7,9 +7,9 @@ const ImageCard = () => (
     <Thumbnail
       src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Reeipublic_Banana.gif"
       alt="pic">
-      <h3>Some Title</h3>
+      <h3 className="imageCardTitle">Some Title</h3>
       <div>
-        <p>User Name</p>
+        <p className="imageCardUser">User Name</p>
       </div>
       <div className="info">
         <a className="left" title="Like">

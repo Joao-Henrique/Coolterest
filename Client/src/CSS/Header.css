@@ -1,19 +1,19 @@
 .navbar {
-  background-color: lightcoral;
-  border-color: lightcoral;
+  background-color:   var(--primary-color);
+  border-color:   var(--primary-color);
   height: 60px;
   padding-top: 10px;
 }
 .navbar-default .navbar-brand {
   font-family: 'Rancho', cursive;
-  color: white;
+  color:   var(--secondary-color);
   font-size: 60px;
 }
 .navbar-default .navbar-nav>li>a {
   font-family: 'Rancho', cursive;
-  color: white;
+  color: var(--secondary-color);
   font-size: 24px;
 }
 a {
-  color: white;
+  color: var(--secondary-color);
 }
