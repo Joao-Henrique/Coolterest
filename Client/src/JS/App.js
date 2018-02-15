@@ -27,18 +27,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-        <p className="App-intro">{this.state.response}</p>
-        <Router>
+      <Router>
+        <div className="App">
+          <Header />
+          <p className="App-intro">{this.state.response}</p>
           <div>
-            <Link to="/">Gallery</Link>
-            <Link to="/AddCool">AddCool</Link>
+            {/* <Link to="/">Gallery</Link>
+    <Link to="/AddCool">AddCool</Link> */}
             <Route exact path="/" component={Gallery} />
             <Route path="/AddCool" component={AddCool} />
           </div>
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }
