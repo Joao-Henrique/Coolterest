@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import '../CSS/Forms.css';
 
-class AddCool extends Component {
+class Login extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -43,37 +43,36 @@ class AddCool extends Component {
     return (
       <div>
         <div className="formBox">
-          <h1 className="addCool">Add your Cool:</h1>
           <form onSubmit={this.handleSubmit}>
 
-            {/* Title */}
+            {/* User Name */}
             <FormGroup
               controlId="formTitle"
               validationState={this.getValidationState()}>
-              <ControlLabel className="controlLable">Title:</ControlLabel>
+              <ControlLabel className="controlLable">User Name:</ControlLabel>
               <FormControl
                 type="text"
                 value={this.state.title}
-                placeholder="Exemple: AWESOME COOL"
+                placeholder="User Name"
                 onChange={this.handleTileChange} />
               <FormControl.Feedback />
             </FormGroup>
 
-            {/* URL */}
+            {/* Password */}
             <FormGroup
               controlId="formURL"
               validationState={this.getValidationState()}>
-              <ControlLabel className="controlLable">URL:</ControlLabel>
+              <ControlLabel className="controlLable">Password:</ControlLabel>
               <FormControl
                 type="text"
                 value={this.state.url}
-                placeholder="Exemple: https://Banana_Image.gif"
+                placeholder="Password"
                 onChange={this.handleUrlChange} />
               <FormControl.Feedback />
             </FormGroup>
 
             <div className="addCoolButtonDiv">
-              <Button className="addCoolButton" bsSize="large" type="submit">Save</Button>
+              <Button className="addCoolButton" bsSize="large" type="submit">Log in</Button>
             </div>
           </form>
         </div>
@@ -83,4 +82,4 @@ class AddCool extends Component {
   }
 }
 
-export default AddCool;
+export default Login;

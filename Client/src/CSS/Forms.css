@@ -1,11 +1,11 @@
 .addCool {
   text-align: center;
   color: var(--secondary-color);
-  margin-top: 0;
 }
 .formBox {
   width: 600px;
   margin: auto;
+  margin-top: 10vh;
   border-color: var(--secondary-color);
   border-style: solid;
   padding: 40px;

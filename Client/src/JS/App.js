@@ -3,7 +3,9 @@ import '../CSS/App.css';
 import Header from './Header';
 import Gallery from './Gallery';
 import AddCool from './AddCool';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Login from './Login';
+import CreateAcount from './CreateAcount';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 class App extends Component {
@@ -18,10 +20,9 @@ class App extends Component {
   }
 
   callApi = async () => {
-    const response = await fetch('/api/message');
+    const response = await fetch('/api/storedImages');
     const body = await response.json();
     if (response.status !== 200) throw Error(body.message);
-
     return body;
   };
 
@@ -30,12 +31,14 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
-          <p className="App-intro">{this.state.response}</p>
+          <p className="ExpressRefsponse">{this.state.response}</p>
           <div>
             {/* <Link to="/">Gallery</Link>
     <Link to="/AddCool">AddCool</Link> */}
             <Route exact path="/" component={Gallery} />
             <Route path="/AddCool" component={AddCool} />
+            <Route path="/Login" component={Login} />
+            <Route path="/CreateAcount" component={CreateAcount} />
           </div>
         </div>
       </Router>

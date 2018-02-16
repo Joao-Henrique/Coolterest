@@ -1,7 +1,7 @@
 import React from 'react';
 import '../CSS/Header.css'
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import { LinkContainer } from 'react-router-bootstrap';
 
 const Header = () => (
   <Navbar collapseOnSelect className="navbar">
@@ -13,21 +13,20 @@ const Header = () => (
     </Navbar.Header>
     <Navbar.Collapse>
       <Nav>
-        <NavItem eventKey={1}>
-          <Link to="/">Gallery</Link>
-        </NavItem>
-        <NavItem eventKey={2} href="/TestDatabase">
-          TestDatabase
-        </NavItem>
+        <LinkContainer to="/">
+          <NavItem eventKey={1}>Gallery</NavItem>
+        </LinkContainer>
       </Nav>
       <Nav pullRight>
-        <NavItem eventKey={2}>
-          <div title="Add Cool"><Link to="/AddCool"><i className="fa fa-plus"></i></Link>
-          </div>
-        </NavItem>
-        <NavItem eventKey={1} href="#">
-          Sign In
-        </NavItem>
+        <LinkContainer to="/AddCool">
+          <NavItem eventKey={2}><i className="fa fa-plus"></i></NavItem>
+        </LinkContainer>
+        <LinkContainer to="/Login">
+          <NavItem eventKey={3}>Login</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/CreateAcount">
+          <NavItem eventKey={4}>Create Acount</NavItem>
+        </LinkContainer>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

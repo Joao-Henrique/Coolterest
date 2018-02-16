@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormGroup, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import '../CSS/Forms.css';
 
-class AddCool extends Component {
+class CreateAcount extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -43,18 +43,18 @@ class AddCool extends Component {
     return (
       <div>
         <div className="formBox">
-          <h1 className="addCool">Add your Cool:</h1>
+          <h1 className="addCool">Create Acount:</h1>
           <form onSubmit={this.handleSubmit}>
 
             {/* Title */}
             <FormGroup
               controlId="formTitle"
               validationState={this.getValidationState()}>
-              <ControlLabel className="controlLable">Title:</ControlLabel>
+              <ControlLabel className="controlLable">UserName:</ControlLabel>
               <FormControl
                 type="text"
                 value={this.state.title}
-                placeholder="Exemple: AWESOME COOL"
+                placeholder="Exemple: Cool Peep"
                 onChange={this.handleTileChange} />
               <FormControl.Feedback />
             </FormGroup>
@@ -63,17 +63,17 @@ class AddCool extends Component {
             <FormGroup
               controlId="formURL"
               validationState={this.getValidationState()}>
-              <ControlLabel className="controlLable">URL:</ControlLabel>
+              <ControlLabel className="controlLable">Password:</ControlLabel>
               <FormControl
                 type="text"
                 value={this.state.url}
-                placeholder="Exemple: https://Banana_Image.gif"
+                placeholder="Exemple: 123456"
                 onChange={this.handleUrlChange} />
               <FormControl.Feedback />
             </FormGroup>
 
             <div className="addCoolButtonDiv">
-              <Button className="addCoolButton" bsSize="large" type="submit">Save</Button>
+              <Button className="addCoolButton" bsSize="large" type="submit">Create</Button>
             </div>
           </form>
         </div>
@@ -83,4 +83,4 @@ class AddCool extends Component {
   }
 }
 
-export default AddCool;
+export default CreateAcount;
