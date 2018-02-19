@@ -21,7 +21,9 @@ router.put('/storedImages/:id', function (req, res, next) {
 
 // delete a image from the db
 router.delete('/storedImages/:id', function (req, res, next) {
-  res.send({ type: 'DELETE' });
+  ImageCardModel.findByIdAndRemove({ _id: req.params.id }).then(function (imageCard) {
+    res.send(imageCard);
+  });
 });
 
 module.exports = router;
