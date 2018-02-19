@@ -16,7 +16,11 @@ router.post('/storedImages', function (req, res, next) {
 
 // update a image to the db
 router.put('/storedImages/:id', function (req, res, next) {
-  res.send({ type: 'PUT' });
+  ImageCardModel.findByIdAndUpdate({ _id: req.params.id }, req.body).then(function () {
+    ImageCardModel.findOne({ _id: req.params.id }).then(function (imageCard) {
+      res.send(imageCard);
+    });
+  });
 });
 
 // delete a image from the db
