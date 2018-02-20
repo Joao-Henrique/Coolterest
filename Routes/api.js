@@ -4,7 +4,9 @@ const ImageCardModel = require('../Models/imageCardModel');
 
 // get a list of stored images from the db
 router.get('/storedImages', function (req, res, next) {
-  res.send({ type: 'GET' });
+  ImageCardModel.find({}).then(function (imageCard) {
+    res.send(imageCard);
+  })
 });
 
 // add a new image to the db
