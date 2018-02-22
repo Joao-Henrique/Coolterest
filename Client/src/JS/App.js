@@ -9,32 +9,26 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 class App extends Component {
-  state = {
-    response: ''
-  };
 
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
-  }
 
-  callApi = async () => {
-    const response = await fetch('/api/storedImages');
-    const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
-    return body;
-  };
 
   render() {
+    console.log(this.state);
+    /* let imageCards = imageCards.map(function (imageCard, index) {
+      return (
+        <li key={index}>
+          <span className={imageCard.obj.url}></span>
+          <span className={imageCard.obj.title}></span>
+        </li>
+      )
+    }); */
+
+
     return (
       <Router>
         <div className="App">
           <Header />
-          <p className="ExpressRefsponse">{this.state.response}</p>
           <div>
-            {/* <Link to="/">Gallery</Link>
-    <Link to="/AddCool">AddCool</Link> */}
             <Route exact path="/" component={Gallery} />
             <Route path="/AddCool" component={AddCool} />
             <Route path="/Login" component={Login} />
@@ -42,7 +36,7 @@ class App extends Component {
           </div>
         </div>
       </Router>
-    );
+    )
   }
 }
 

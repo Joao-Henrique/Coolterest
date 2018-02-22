@@ -10,6 +10,9 @@ const port = process.env.PORT || 5000;
 // connect to mongo db
 mongoose.connect('mongodb://pipetest:1234567890@pipecluster0-shard-00-00-dgn30.mongodb.net:27017,pipecluster0-shard-00-01-dgn30.mongodb.net:27017,pipecluster0-shard-00-02-dgn30.mongodb.net:27017/test?ssl=true&replicaSet=PipeCluster0-shard-0&authSource=admin');
 
+// serve static files
+app.use(express.static('./Client/public'));
+
 // body parser middleware
 app.use(bodyParser.json())
 
