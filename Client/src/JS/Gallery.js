@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import ImageCard from './ImageCard';
-import { Grid, Row } from 'react-bootstrap';
+import Masonry from 'react-masonry-component';
 
-
-
+var masonryOptions = {
+  transitionDuration: 300
+};
 
 class Gallery extends Component {
 
@@ -14,14 +15,6 @@ class Gallery extends Component {
     }
   }
 
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  componentDidUpdate() {
-    console.log(this.state);
-  }
-
   // Retrieve data from the database
   fetchData() {
     fetch("/api/storedImages")
@@ -29,19 +22,27 @@ class Gallery extends Component {
       .then(parsedJSON => this.setState({ storedData: parsedJSON }))
   }
 
+  componentDidMount() {
+    this.fetchData();
+  }
+
   render() {
+
+    const childElements = this.state.storedData.map(item => {
+      return (
+        <ImageCard key={item._id} title={item.title} url={item.url} />
+      );
+    });
+
     return (
-      <div>
-        <Grid>
-          <Row>
-            {
-              this.state.storedData.map(item => {
-                return <ImageCard key={item._id} title={item.title} url={item.url} />
-              })
-            }
-          </Row>
-        </Grid>
-      </div>
+      <Masonry
+        className={'my-gallery-class'} // default ''
+        elementType={'ul'} // default 'div'
+        options={masonryOptions} // default {}
+        disableImagesLoaded={false} // default false
+        updateOnEachImageLoad={false}> // default false and works only if disableImagesLoaded is false
+        {childElements}
+      </Masonry>
     )
   }
 }
