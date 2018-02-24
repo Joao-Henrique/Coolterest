@@ -3,7 +3,8 @@ import ImageCard from './ImageCard';
 import Masonry from 'react-masonry-component';
 
 var masonryOptions = {
-  transitionDuration: 300
+  transitionDuration: 300,
+  gutter: 10
 };
 
 class Gallery extends Component {
@@ -30,7 +31,7 @@ class Gallery extends Component {
 
     const childElements = this.state.storedData.map(item => {
       return (
-        <ImageCard key={item._id} title={item.title} url={item.url} />
+        <ImageCard key={item._id} title={item.title} url={item.url} user={item.user} date={item.date} />
       );
     });
 
@@ -40,7 +41,8 @@ class Gallery extends Component {
         elementType={'ul'} // default 'div'
         options={masonryOptions} // default {}
         disableImagesLoaded={false} // default false
-        updateOnEachImageLoad={false}> // default false and works only if disableImagesLoaded is false
+        updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+      >
         {childElements}
       </Masonry>
     )

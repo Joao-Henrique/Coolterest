@@ -13,16 +13,6 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state);
-    /* let imageCards = imageCards.map(function (imageCard, index) {
-      return (
-        <li key={index}>
-          <span className={imageCard.obj.url}></span>
-          <span className={imageCard.obj.title}></span>
-        </li>
-      )
-    }); */
-
 
     return (
       <Router>

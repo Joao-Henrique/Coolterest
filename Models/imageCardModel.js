@@ -9,6 +9,12 @@ const imageCardSchema = new Schema({
   url: {
     type: String,
     required: [true, 'url field is required']
+  },
+  user: {
+    type: String,
+  },
+  date: {
+    type: String,
   }
 }
 );

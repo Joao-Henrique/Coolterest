@@ -14,7 +14,7 @@ class AddCool extends Component {
     this.state = {
       title: '',
       url: '',
-      user: '',
+      user: 'Current User',
       date: new Date().toLocaleDateString(),
     };
   }
@@ -35,8 +35,24 @@ class AddCool extends Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    console.log(this.state);
+    this.sendToDatabase();
+  }
+
+  // send user posted data to the database
+  sendToDatabase() {
+    fetch('http://localhost:3000/api/storedImages/', {
+      method: 'POST',
+      mode: 'CORS',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: this.state.title,
+        url: this.state.url,
+        user: this.state.user,
+        date: this.state.date
+      })
+    })
   }
 
   render() {

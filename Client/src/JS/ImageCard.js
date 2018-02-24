@@ -12,13 +12,13 @@ class ImageCard extends Component {
           alt="pic">
           <h3 className="imageCardTitle">{this.props.title}</h3>
           <div>
-            <p className="imageCardUser">?User Name?</p>
+            <p className="imageCardUser">{this.props.user}</p>
           </div>
           <div className="info">
             <a className="left" title="Like">
               <i className="fa fa-thumbs-up"></i>
             </a>
-            <p className="date">Post Date</p>
+            <p className="date">{this.props.date}</p>
             <a className="right" title="Delete">
               <i className="fa fa-trash"></i>
             </a>

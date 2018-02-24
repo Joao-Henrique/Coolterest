@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ImageCardModel = require('../Models/imageCardModel');
+const ImageCardModel = require('../Models/ImageCardModel');
 
 // get a list of stored images from the db
 router.get('/storedImages', function (req, res, next) {
