@@ -4,11 +4,25 @@ import '../CSS/ImageCard.css';
 
 class ImageCard extends Component {
 
+
+
   render() {
+
+    const handleClick = () => {
+      fetch("/api/storedImages/" + this.props.id, {
+        method: 'DELETE',
+        mode: 'CORS'
+      }).then(res => res)
+        .catch(err => err)
+        .then(window
+          .location
+          .reload(true));
+    }
+
     return (
       <div className="imageCard">
         <Thumbnail
-          src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Reeipublic_Banana.gif"
+          src={this.props.url}
           alt="pic">
           <h3 className="imageCardTitle">{this.props.title}</h3>
           <div>
@@ -19,7 +33,7 @@ class ImageCard extends Component {
               <i className="fa fa-thumbs-up"></i>
             </a>
             <p className="date">{this.props.date}</p>
-            <a className="right" title="Delete">
+            <a className="right" title="Delete" onClick={handleClick}>
               <i className="fa fa-trash"></i>
             </a>
           </div>

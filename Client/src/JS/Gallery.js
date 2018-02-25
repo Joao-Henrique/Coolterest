@@ -31,7 +31,7 @@ class Gallery extends Component {
 
     const childElements = this.state.storedData.map(item => {
       return (
-        <ImageCard key={item._id} title={item.title} url={item.url} user={item.user} date={item.date} />
+        <ImageCard key={item._id} id={item._id} title={item.title} url={item.url} user={item.user} date={item.date} />
       );
     });
 
