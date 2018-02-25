@@ -8,7 +8,7 @@ class ImageCard extends Component {
 
   render() {
 
-    const handleClick = () => {
+    const deleteImageCardFromDatabase = () => {
       fetch("/api/storedImages/" + this.props.id, {
         method: 'DELETE',
         mode: 'CORS'
@@ -33,7 +33,7 @@ class ImageCard extends Component {
               <i className="fa fa-thumbs-up"></i>
             </a>
             <p className="date">{this.props.date}</p>
-            <a className="right" title="Delete" onClick={handleClick}>
+            <a className="right" title="Delete" onClick={deleteImageCardFromDatabase}>
               <i className="fa fa-trash"></i>
             </a>
           </div>
