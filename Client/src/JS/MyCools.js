@@ -4,7 +4,7 @@ import Masonry from 'react-masonry-component';
 
 var masonryOptions = {
   transitionDuration: 300,
-  gutter: 12
+  gutter: 10
 };
 
 class Gallery extends Component {

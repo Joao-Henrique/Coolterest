@@ -2,6 +2,7 @@
   border-radius: 8px;
   width: 200px;
   background-color: var(--secondary-color);
+  margin-bottom: 12px;
 }
 h3, p {
   margin: 0;

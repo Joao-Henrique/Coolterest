@@ -16,6 +16,9 @@ const Header = () => (
         <LinkContainer to="/">
           <NavItem eventKey={1}>Gallery</NavItem>
         </LinkContainer>
+        <LinkContainer to="/MyCools">
+          <NavItem eventKey={1}>My Cools</NavItem>
+        </LinkContainer>
       </Nav>
       <Nav pullRight>
         <LinkContainer to="/AddCool">
@@ -23,9 +26,6 @@ const Header = () => (
         </LinkContainer>
         <LinkContainer to="/Login">
           <NavItem eventKey={3}>Login</NavItem>
-        </LinkContainer>
-        <LinkContainer to="/CreateAcount">
-          <NavItem eventKey={4}>Create Acount</NavItem>
         </LinkContainer>
       </Nav>
     </Navbar.Collapse>
