@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import loading from './loading.svg';
+import { withRouter } from 'react-router-dom';
 
 class Callback extends Component {
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.history.replace('/home');
+    }, 1000);
+  }
+
   render() {
+
     const style = {
       position: 'absolute',
       display: 'flex',
@@ -16,12 +25,13 @@ class Callback extends Component {
       backgroundColor: 'white',
     }
 
+
     return (
       <div style={style}>
-        <img src={loading} alt="loading"/>
+        <img src={loading} alt="loading" />
       </div>
     );
   }
 }
 
-export default Callback;
+export default withRouter(Callback);
