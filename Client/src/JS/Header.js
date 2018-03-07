@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import '../CSS/Header.css'
-import { Button, Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { withRouter } from 'react-router-dom';
 
 class Header extends Component {
+
+
 
   login() {
     this.props.auth.login();
@@ -20,35 +22,26 @@ class Header extends Component {
   }
 
   render() {
-    console.log("is Authenticated:" + this.props.auth.isAuthenticated());
-    console.log(this.props.history)
 
     const { isAuthenticated } = this.props.auth;
-    //    <LinkContainer to="/Login">
-    //    <NavItem eventKey={3}>Login</NavItem>
-    //  </LinkContainer>
     return (
 
       <Navbar collapseOnSelect className="navbar">
         <Navbar.Header>
-          <Navbar.Brand>
-            Coolterest
-      </Navbar.Brand>
+          <LinkContainer to="/home">
+            <Navbar.Brand>
+              Coolterest
+            </Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
-          <Nav>
-            <LinkContainer to="/">
-              <NavItem eventKey={1}>Gallery</NavItem>
-            </LinkContainer>
-          </Nav>
           <Nav pullRight>
             {
               !isAuthenticated() && (
-                <Button
-                  onClick={() => this.login()}>
+                <NavItem onClick={() => this.login()}>
                   Login
-              </Button>
+                </NavItem>
               )
             }
             {
@@ -57,17 +50,12 @@ class Header extends Component {
                   <LinkContainer to="/MyCools">
                     <NavItem eventKey={1}>My Cools</NavItem>
                   </LinkContainer>
-                  <LinkContainer to="/AddCool">
-                    <NavItem eventKey={2}><i className="fa fa-plus"></i></NavItem>
-                  </LinkContainer>
-                  <Button
-                    onClick={() => this.logout()}>
+                  <NavItem onClick={() => this.logout()}>
                     Log Out
-                  </Button>
+                  </NavItem>
                 </Nav>
               )
             }
-
           </Nav>
         </Navbar.Collapse>
       </Navbar>

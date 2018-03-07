@@ -4,7 +4,7 @@ import Header from './Header';
 import Gallery from './Gallery';
 import MyCools from './MyCools';
 import AddCool from './AddCool';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import Auth from '../Auth/Auth';
 import Callback from '../Callback/Callback';
 import history from '../Auth/history';
