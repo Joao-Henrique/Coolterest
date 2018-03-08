@@ -14,7 +14,6 @@ class Header extends Component {
 
   logout() {
     this.props.auth.logout();
-    this.setState({});
   }
 
   goTo(route) {
@@ -50,9 +49,11 @@ class Header extends Component {
                   <LinkContainer to="/MyCools">
                     <NavItem eventKey={1}>My Cools</NavItem>
                   </LinkContainer>
-                  <NavItem onClick={() => this.logout()}>
-                    Log Out
-                  </NavItem>
+                  <LinkContainer to="/home">
+                    <NavItem onClick={() => this.logout()}>
+                      Log Out
+                    </NavItem>
+                  </LinkContainer>
                 </Nav>
               )
             }
