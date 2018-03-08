@@ -16,17 +16,14 @@ h3, p {
 .imageCardUser {
   color: var(--text-color);
 }
-.left {
-  color: var(--text-color);
-  margin-left:12px;
-}
 .right {
   color: var(--text-color);
-  margin-left:40px;
+  margin: auto;
+  position: absolute;
 }
 .date {
-  margin-left: 40px;
   color: var(--text-color);
+  margin: auto;
 }
 .imageCard {
   width:200px;

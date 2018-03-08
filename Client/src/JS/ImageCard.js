@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Thumbnail } from 'react-bootstrap';
+import { Thumbnail, Button } from 'react-bootstrap';
 import '../CSS/ImageCard.css';
 
 class ImageCard extends Component {
@@ -26,16 +26,17 @@ class ImageCard extends Component {
           alt="pic">
           <h3 className="imageCardTitle">{this.props.title}</h3>
           <div>
-            <p className="imageCardUser">{this.props.user}</p>
+            <p className="imageCardUser">by {this.props.user}</p>
           </div>
           <div className="info">
-            <a className="left" title="Like">
-              <i className="fa fa-thumbs-up"></i>
-            </a>
             <p className="date">{this.props.date}</p>
-            <a className="right" title="Delete" onClick={deleteImageCardFromDatabase}>
-              <i className="fa fa-trash"></i>
-            </a>
+            {
+              this.props.showDeleteButton && (
+                <Button bsSize="xsmall" className="right" title="Delete" onClick={deleteImageCardFromDatabase}>
+                  <i className="fa fa-trash"></i>
+                </Button>
+              )
+            }
           </div>
         </Thumbnail>
       </div>

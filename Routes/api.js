@@ -9,6 +9,13 @@ router.get('/storedImages', function (req, res, next) {
   })
 });
 
+// get a list of specific user stored images from the db
+router.get('/storedImages/:id', function (req, res, next) {
+  ImageCardModel.find({ _id: req.params.user }).then(function (imageCard) {
+    res.send(imageCard);
+  })
+});
+
 // add a new image to the db
 router.post('/storedImages', function (req, res, next) {
   ImageCardModel.create(req.body).then(function (imageCard) {

@@ -1,34 +1,14 @@
-.addCool {
-  text-align: center;
-  color: var(--secondary-color);
-}
 .formBox {
   width: 600px;
-  margin: auto;
-  margin-top: 10vh;
-  border-color: var(--secondary-color);
-  border-style: solid;
-  padding: 40px;
 }
 .controlLable {
-  color: var(--secondary-color);
+  text-align: left;
   font-size: 20px;
-  margin-top: 20px;
 }
-.addCoolButtonDiv {
-  text-align: right;
-  margin-top: 40px;
+.myCoolsHeader {
+  display: inline-flex;
+  margin-bottom: 2vw;
 }
 .addCoolButton {
-  border-style: solid;
-  border-color: var(--secondary-color);
-  color:  var(--secondary-color);
-  background-color:  var(--primary-color);
-}
-.addCoolButton:hover {
-  border-style: solid;
-  border-color:  var(--primary-color);
-  color:  var(--primary-color);
-  transition: 300ms;
-  background-color:  var(--secondary-color);
+  margin-left: 10vw;
 }
