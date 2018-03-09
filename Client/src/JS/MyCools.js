@@ -16,6 +16,7 @@ class Gallery extends Component {
     this.handleTileChange = this.handleTileChange.bind(this);
     this.handleUrlChange = this.handleUrlChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlerForDeleteImageCard = this.handlerForDeleteImageCard.bind(this);
 
     this.state = {
       storedData: [],
@@ -30,11 +31,10 @@ class Gallery extends Component {
 
   // Retrieve user data from the database
   fetchData() {
-    fetch("/api/storedImages/" + this.state.user)
+    fetch("/api/storedImages/" + this.state.profile.name)
       .then(response => response.json())
       .then(parsedJSON => this.setState({ storedData: parsedJSON }))
   }
-
 
   // Retrieve user information from Auth0
   getUserProfile() {
@@ -90,9 +90,16 @@ class Gallery extends Component {
     })
   }
 
-  componentWillMount() {
+  handlerForDeleteImageCard() {
     this.fetchData();
+  }
+
+  componentWillMount() {
     this.getUserProfile();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    prevState.profile !== this.state.profile && this.fetchData();
   }
 
   componentWillUnmount() {
@@ -100,7 +107,6 @@ class Gallery extends Component {
   }
 
   render() {
-
     const childElements = this.state.storedData.map(item => {
       return (
         <ImageCard
@@ -110,7 +116,8 @@ class Gallery extends Component {
           url={item.url}
           user={item.user}
           date={item.date}
-          showDeleteButton={true} />
+          showDeleteButton={true}
+          action={this.handlerForDeleteImageCard} />
       );
     });
 

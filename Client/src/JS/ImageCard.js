@@ -4,20 +4,16 @@ import '../CSS/ImageCard.css';
 
 class ImageCard extends Component {
 
-
+  deleteImageCardFromDatabase() {
+    fetch("/api/storedImages/" + this.props.id, {
+      method: 'DELETE',
+      mode: 'CORS'
+    }).then(res => res)
+      .catch(err => err)
+      .then(this.setState({ something: "" }));
+  }
 
   render() {
-
-    const deleteImageCardFromDatabase = () => {
-      fetch("/api/storedImages/" + this.props.id, {
-        method: 'DELETE',
-        mode: 'CORS'
-      }).then(res => res)
-        .catch(err => err)
-        .then(window
-          .location
-          .reload(true));
-    }
 
     return (
       <div className="imageCard">
@@ -32,7 +28,14 @@ class ImageCard extends Component {
             <p className="date">{this.props.date}</p>
             {
               this.props.showDeleteButton && (
-                <Button bsSize="xsmall" className="right" title="Delete" onClick={deleteImageCardFromDatabase}>
+                <Button bsSize="xsmall"
+                  className="right"
+                  title="Delete"
+                  onClick={() => {
+                    this.deleteImageCardFromDatabase();
+                    this.props.action();
+                  }
+                  }>
                   <i className="fa fa-trash"></i>
                 </Button>
               )
