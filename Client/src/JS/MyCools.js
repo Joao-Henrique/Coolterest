@@ -90,6 +90,8 @@ class Gallery extends Component {
     })
   }
 
+  //promise to get user profile before fetch data
+
   handlerForDeleteImageCard() {
     this.fetchData();
   }
