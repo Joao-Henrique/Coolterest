@@ -30,26 +30,28 @@ class Gallery extends Component {
   }
 
   // Retrieve user data from the database
-  fetchData() {
-    fetch("/api/storedImages/" + this.state.profile.name)
+  fetchData(profile) {
+    fetch("/api/storedImages/" + profile.name)
       .then(response => response.json())
       .then(parsedJSON => this.setState({ storedData: parsedJSON }))
   }
 
   // Retrieve user information from Auth0
   getUserProfile() {
-    this.setState({ profile: {} });
-    const { userProfile, getProfile } = this.props.auth;
-    if (!userProfile) {
-      getProfile((err, profile) => {
-        this.setState({ profile });
-      });
-    } else {
-      this.setState({
-        profile: userProfile,
-      });
-    }
+    return new Promise((resolve, reject) => {
+      const { userProfile, getProfile } = this.props.auth;
+      if (!userProfile) {
+        getProfile((err, profile) => {
+          this.setState({ profile });
+        });
+      } else {
+        resolve(userProfile)
+        this.setState({ profile: userProfile })
+      }
+    })
   }
+
+
 
   // Modal Handlers
   handleClose() {
@@ -90,18 +92,15 @@ class Gallery extends Component {
     })
   }
 
-  //promise to get user profile before fetch data
-
   handlerForDeleteImageCard() {
     this.fetchData();
   }
 
   componentWillMount() {
-    this.getUserProfile();
-  }
+    this.setState({ profile: {} });
 
-  componentDidUpdate(prevProps, prevState) {
-    prevState.profile !== this.state.profile && this.fetchData();
+    this.getUserProfile()
+      .then(profile => this.fetchData(profile))
   }
 
   componentWillUnmount() {
@@ -126,7 +125,7 @@ class Gallery extends Component {
     return (
       <div>
         <div className="myCoolsHeader">
-          <h1>{this.state.profile.name + "'s Cools!"}</h1>
+          <h1>{this.state.profile && this.state.profile.name + "'s Cools!"}</h1>
           <Button className="addCoolButton" bsStyle="primary" bsSize="large" onClick={() => this.handleShow()}>
             Add New Cool
         </Button>
