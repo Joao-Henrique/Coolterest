@@ -43,6 +43,7 @@ class Gallery extends Component {
       if (!userProfile) {
         getProfile((err, profile) => {
           this.setState({ profile });
+          resolve(profile)
         });
       } else {
         resolve(userProfile)
@@ -97,8 +98,6 @@ class Gallery extends Component {
   }
 
   componentWillMount() {
-    this.setState({ profile: {} });
-
     this.getUserProfile()
       .then(profile => this.fetchData(profile))
   }
