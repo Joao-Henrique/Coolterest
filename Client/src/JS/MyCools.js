@@ -127,12 +127,7 @@ class Gallery extends Component {
 
     return (
       <div>
-        <div className="myCoolsHeader">
-          <h1>{this.state.profile && this.state.profile.name + "'s Cools!"}</h1>
-          <Button className="addCoolButton" bsStyle="primary" bsSize="large" onClick={() => this.handleShow()}>
-            Add New Cool
-        </Button>
-        </div>
+
         <Modal show={this.state.showModal} onHide={() => this.handleClose()}>
 
           <Modal.Body>
@@ -163,8 +158,10 @@ class Gallery extends Component {
               <FormControl.Feedback />
             </FormGroup>
             <img className="imagePreview" src={this.state.url} alt="" />
-            <Button className="saveButton" bsStyle="success" onClick={this.handleSubmit}>Save</Button>
-            <Button className="closeButton" onClick={() => this.handleClose()}>Close</Button>
+            <div>
+              <Button className="saveButton" bsStyle="primary" onClick={this.handleSubmit}>Save</Button>
+              <Button className="closeButton" onClick={() => this.handleClose()}>Close</Button>
+            </div>
           </Modal.Body>
         </Modal>
 
@@ -176,6 +173,12 @@ class Gallery extends Component {
           disableImagesLoaded={false} // default false
           updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
         >
+          <Button className="addCoolButton" bsStyle="primary" bsSize="large" onClick={() => this.handleShow()}>
+            Add New Cool
+          </Button>
+          <div className="myCoolsHeader">
+            <h1>{this.state.profile && this.state.profile.name + "'s Cools!"}</h1>
+          </div>
           {childElements}
         </Masonry>
       </div >

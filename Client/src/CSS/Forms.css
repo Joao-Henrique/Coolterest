@@ -5,16 +5,19 @@
   text-align: left;
   font-size: 20px;
 }
-.myCoolsHeader {
-  display: inline-flex;
-  margin-bottom: 2vw;
-}
 .addCoolButton {
-  margin-left: 10vw;
+  width: 200px;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 26px;
 }
 .closeButton {
-  float: right
+  float: right;
+  margin-right:5px;
+  margin-top: -30px;
 }
 .saveButton {
-  float: right
+  float: right;
+  margin-top: -30px;
 }

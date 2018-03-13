@@ -8,5 +8,14 @@ body {
 }
 
 h1 {
-  color: var(--secondary-color)
+  color: var(--primary-color);
+  width: 100%;
+  font-family: 'Rancho', cursive;
+}
+.myCoolsHeader {
+  width: 409px;
+  height: 80px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background-color: var(--secondary-color)
 }
