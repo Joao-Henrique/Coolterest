@@ -12,3 +12,9 @@
 .addCoolButton {
   margin-left: 10vw;
 }
+.closeButton {
+  float: right
+}
+.saveButton {
+  float: right
+}

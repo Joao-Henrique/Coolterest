@@ -69,6 +69,9 @@ class Gallery extends Component {
   }
   handleSubmit(e) {
     this.sendToDatabase();
+    this.getUserProfile()
+      .then(profile => this.fetchData(profile))
+      .then(this.setState({ showModal: false, title: "", url: "" }))
   }
   getValidationState() {
     const titleLength = this.state.title.length;
@@ -94,7 +97,8 @@ class Gallery extends Component {
   }
 
   handlerForDeleteImageCard() {
-    this.fetchData();
+    this.getUserProfile()
+      .then(profile => this.fetchData(profile))
   }
 
   componentWillMount() {
@@ -159,8 +163,8 @@ class Gallery extends Component {
               <FormControl.Feedback />
             </FormGroup>
             <img className="imagePreview" src={this.state.url} alt="" />
-            <Button onClick={this.handleSubmit}>Save</Button>
-            <Button onClick={() => this.handleClose()}>Close</Button>
+            <Button className="saveButton" bsStyle="success" onClick={this.handleSubmit}>Save</Button>
+            <Button className="closeButton" onClick={() => this.handleClose()}>Close</Button>
           </Modal.Body>
         </Modal>
 
