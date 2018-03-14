@@ -9,7 +9,6 @@ router.get('/storedImages', function (req, res, next) {
   })
 });
 
-
 // get a list of specific user stored images from the db
 router.get('/storedImages/:user', function (req, res, next) {
   ImageCardModel.find({ user: req.params.user }).then(function (imageCard) {
