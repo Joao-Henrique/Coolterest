@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "author": "Joao Henrique",
   "license": "MIT",
+  "homepage": "https://Joao-Henrique.github.io/Coolterest",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "client": "cd client && npm start",
     "start": "node server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run start\" \"npm run client\""
