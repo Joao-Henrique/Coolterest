@@ -6,7 +6,7 @@
   "scripts": {
     "client": "cd client && npm start",
     "start": "node server.js",
-    "build": "./Client/react-scripts build",
+    "build": "webpack --config webpack.conf.js",
     "dev": "concurrently --kill-others-on-fail \"npm run start\" \"npm run client\""
   },
   "dependencies": {
