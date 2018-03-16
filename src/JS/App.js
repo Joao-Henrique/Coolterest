@@ -23,7 +23,6 @@ class App extends Component {
 
 
   render() {
-    //    <Route exact path="/Login" component={Login} />
 
     return (
       <Router history={history}>
@@ -31,7 +30,7 @@ class App extends Component {
           <Header auth={auth} {...this.props} />
 
           <div>
-            <Route exact path="/home" render={(props) => <Gallery auth={auth} {...props} />} />
+            <Route exact path="/" render={(props) => <Gallery auth={auth} {...props} />} />
             <Route exact path="/MyCools" render={(props) => <MyCools auth={auth} {...props} />} />
             <Route exact path="/AddCool" render={(props) => <AddCool auth={auth} {...props} />} />
 

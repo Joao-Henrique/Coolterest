@@ -27,7 +27,7 @@ class Header extends Component {
 
       <Navbar collapseOnSelect className="navbar">
         <Navbar.Header>
-          <LinkContainer to="/home">
+          <LinkContainer to="/">
             <Navbar.Brand>
               Coolterest
             </Navbar.Brand>
@@ -49,7 +49,7 @@ class Header extends Component {
                   <LinkContainer to="/MyCools">
                     <NavItem eventKey={1}>My Cools</NavItem>
                   </LinkContainer>
-                  <LinkContainer to="/home">
+                  <LinkContainer to="/">
                     <NavItem onClick={() => this.logout()}>
                       Log Out
                     </NavItem>
