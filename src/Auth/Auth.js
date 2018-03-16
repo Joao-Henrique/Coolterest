@@ -44,7 +44,7 @@ export default class Auth {
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
     // navigate to the home route
-    history.replace('/');
+    history.replace('/Coolterest/');
   }
 
   logout() {
@@ -53,7 +53,7 @@ export default class Auth {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
     // navigate to the home route
-    history.replace('/');
+    history.replace('/Coolterest/');
   }
 
   isAuthenticated() {

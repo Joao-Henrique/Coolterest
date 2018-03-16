@@ -27,7 +27,7 @@ class Header extends Component {
 
       <Navbar collapseOnSelect className="navbar">
         <Navbar.Header>
-          <LinkContainer to="/Coolterest">
+          <LinkContainer to="/Coolterest/">
             <Navbar.Brand>
               Coolterest
             </Navbar.Brand>
@@ -46,10 +46,10 @@ class Header extends Component {
             {
               isAuthenticated() && (
                 <Nav>
-                  <LinkContainer to="/MyCools">
+                  <LinkContainer to="/Coolterest/MyCools">
                     <NavItem eventKey={1}>My Cools</NavItem>
                   </LinkContainer>
-                  <LinkContainer to="/">
+                  <LinkContainer to="/Coolterest/">
                     <NavItem onClick={() => this.logout()}>
                       Log Out
                     </NavItem>
