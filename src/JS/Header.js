@@ -27,7 +27,7 @@ class Header extends Component {
 
       <Navbar collapseOnSelect className="navbar">
         <Navbar.Header>
-          <LinkContainer to="/">
+          <LinkContainer to="/Coolterest">
             <Navbar.Brand>
               Coolterest
             </Navbar.Brand>
