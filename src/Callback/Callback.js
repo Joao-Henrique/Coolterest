@@ -6,7 +6,7 @@ class Callback extends Component {
 
   componentDidMount() {
     setTimeout(() => {
-      this.props.history.replace('/MyCools');
+      this.props.history.replace('/Coolterest/MyCools');
     }, 1000);
   }
 

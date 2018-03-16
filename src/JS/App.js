@@ -30,11 +30,11 @@ class App extends Component {
           <Header auth={auth} {...this.props} />
 
           <div>
-            <Route exact path="/Cooltesrest/" render={(props) => <Gallery auth={auth} {...props} />} />
-            <Route exact path="/Cooltesrest/MyCools" render={(props) => <MyCools auth={auth} {...props} />} />
-            <Route exact path="/Cooltesrest/AddCool" render={(props) => <AddCool auth={auth} {...props} />} />
+            <Route exact path="/Coolterest/" render={(props) => <Gallery auth={auth} {...props} />} />
+            <Route exact path="/Coolterest/MyCools" render={(props) => <MyCools auth={auth} {...props} />} />
+            <Route exact path="/Coolterest/AddCool" render={(props) => <AddCool auth={auth} {...props} />} />
 
-            <Route exact path="/Cooltesrest/callback" render={(props) => {
+            <Route exact path="/Coolterest/callback" render={(props) => {
               handleAuthentication(props);
               return <Callback {...props} />
             }} />

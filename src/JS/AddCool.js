@@ -40,7 +40,7 @@ class AddCool extends Component {
 
   // send user posted data to the database
   sendToDatabase() {
-    fetch('http://localhost:3000/api/storedImages/', {
+    fetch('https://glacial-river-12236.herokuapp.com/api/storedImages', {
       method: 'POST',
       mode: 'CORS',
       headers: {
