@@ -18,7 +18,7 @@ class Gallery extends Component {
 
   // Retrieve data from the database
   fetchData() {
-    fetch("/api/storedImages")
+    fetch("https://glacial-river-12236.herokuapp.com/api/storedImages")
       .then(response => response.json())
       .then(parsedJSON => this.setState({ storedData: parsedJSON }))
   }
