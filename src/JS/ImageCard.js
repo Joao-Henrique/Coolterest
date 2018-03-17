@@ -7,7 +7,7 @@ class ImageCard extends Component {
   deleteImageCardFromDatabase() {
     fetch("/api/storedImages/" + this.props.id, {
       method: 'DELETE',
-      mode: 'CORS'
+      mode: 'NO-CORS'
     }).then(res => res)
       .catch(err => err)
       .then(this.setState({ something: "" }));
