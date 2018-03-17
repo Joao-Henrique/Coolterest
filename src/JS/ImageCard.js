@@ -33,7 +33,9 @@ class ImageCard extends Component {
                   title="Delete"
                   onClick={() => {
                     this.deleteImageCardFromDatabase();
-                    this.props.action();
+                    setTimeout(() => {
+                      this.props.action();
+                    }, 1000)
                   }
                   }>
                   <i className="fa fa-trash"></i>
