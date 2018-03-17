@@ -3,24 +3,34 @@
   border-color:   var(--primary-color);
   height: 60px;
   padding-top: 10px;
+  z-index: 1;
+}
+.nav {
+  background-color: var(--primary-color);
+  z-index: 1;
 }
 .navbar-default .navbar-brand {
   font-family: 'Rancho', cursive;
   color:   var(--secondary-color);
   font-size: 60px;
+  z-index: 1;
 }
 .navbar-default .navbar-nav>li>a {
   font-family: 'Rancho', cursive;
   color: var(--secondary-color);
   font-size: 24px;
+  z-index: 1;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default {
   background-color:   var(--primary-color);
   color: var(--secondary-color);
+  z-index: 1;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
   background-color:   var(--primary-color);
+  z-index: 1;
 }
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
   color: var(--text-color);
+  z-index: 1;
 }
