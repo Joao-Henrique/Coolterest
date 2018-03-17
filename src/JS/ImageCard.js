@@ -5,7 +5,7 @@ import '../CSS/ImageCard.css';
 class ImageCard extends Component {
 
   deleteImageCardFromDatabase() {
-    fetch("https://glacial-river-12236.herokuapp.com//api/storedImages/" + this.props.id, {
+    fetch("https://glacial-river-12236.herokuapp.com/api/storedImages/" + this.props.id, {
       method: 'DELETE',
       mode: 'CORS'
     }).then(res => res)
