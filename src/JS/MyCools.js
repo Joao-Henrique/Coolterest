@@ -113,7 +113,7 @@ class Gallery extends Component {
   }
 
   render() {
-    const childElements = this.state.storedData.map(item => {
+    const childElements = this.state.storedData.reverse().map(item => {
       return (
         <ImageCard
           key={item._id}
