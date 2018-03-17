@@ -19,3 +19,9 @@ h1 {
   margin-bottom: 12px;
   background-color: var(--secondary-color)
 }
+
+@media (min-width: 768px) {
+  .my-gallery-class {
+  margin-top: 40px;
+  }
+}
