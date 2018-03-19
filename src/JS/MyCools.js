@@ -68,12 +68,10 @@ class Gallery extends Component {
     this.setState({ url: e.target.value });
   }
   handleSubmit(e) {
-    this.sendToDatabase();
-    setTimeout(() => {
-      this.getUserProfile()
-        .then(profile => this.fetchData(profile))
-        .then(this.setState({ showModal: false, title: "", url: "" }))
-    }, 1000)
+    this.sendToDatabase()
+      .then(this.getUserProfile())
+      .then(profile => this.fetchData(profile))
+      .then(this.setState({ showModal: false, title: "", url: "" }))
   }
   getValidationState() {
     const titleLength = this.state.title.length;
