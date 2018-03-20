@@ -30,7 +30,8 @@ export default class Auth {
         this.setSession(authResult);
       } else if (err) {
         console.log(err);
-        alert(`Error: ${err.error}. Check the console for further details.`);
+        alert(`JH Error: ${err.error}. Check the console for further details.`);
+        history.replace('/Coolterest');
       }
     });
   }
