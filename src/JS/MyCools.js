@@ -71,6 +71,7 @@ class Gallery extends Component {
     this.sendToDatabase()
       .then(this.getUserProfile())
       .then(profile => this.fetchData(profile))
+      .then(this.handleClose())
       .then(this.setState({ showModal: false, title: "", url: "" }))
   }
   getValidationState() {
