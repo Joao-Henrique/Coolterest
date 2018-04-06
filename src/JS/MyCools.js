@@ -182,7 +182,7 @@ class Gallery extends Component {
           </div>
           {childElements}
         </Masonry>
-      </div >
+      </div>
     )
   }
 }
